@@ -1,0 +1,35 @@
+.footer {
+  background: #0D1117;  /* same as portfolio dark theme */
+  color: #C9D1D9;
+  padding: 2rem 1rem;
+  text-align: center;
+  border-top: 1px solid #161B22;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-text {
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  color: #8b949e;
+}
+
+.footer-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem;
+}
+
+.footer-icons a {
+  font-size: 1.4rem;
+  color: #C9D1D9;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer-icons a:hover {
+  color: #58a6ff;   /* hover accent */
+  transform: scale(1.2);
+}

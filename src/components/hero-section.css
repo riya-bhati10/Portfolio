@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+.hero {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 6rem 2rem ;
+  font-family: "Poppins", sans-serif;
+  background: #0D1117;
+  overflow: hidden;
+}
+
+.hero-container {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+/* === Hidden state (before animation) === */
+.hero-text .hello,
+.hero-text .name,
+.hero-text .role,
+.hero-text .subtitle,
+.buttons,
+.hero-image img {
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+/* === Animate when in view === */
+.hero-text .hello.animate {
+  animation: fadeInUp 0.8s ease forwards;
+}
+.hero-text .name.animate {
+  animation: fadeInUp 0.8s ease forwards 0.2s;
+}
+.hero-text .role.animate {
+  animation: fadeInUp 0.8s ease forwards 0.4s;
+}
+.hero-text .subtitle.animate {
+  animation: fadeInUp 0.8s ease forwards 0.6s;
+}
+.buttons.animate {
+  animation: fadeInUp 0.8s ease forwards 0.8s;
+}
+.hero-image img.animate {
+  animation: fadeInRight 1s ease forwards 1s;
+}
+
+/* === Text Styles === */
+.hero-text {
+  flex: 1;
+  color: #C9D1D9;
+  min-width: 300px;
+}
+
+.hero-text .hello {
+  font-size: 1.8rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.hero-text .name {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin: 0.5rem 0;
+  line-height: 1.2;
+}
+
+.hero-text .name span {
+  color: #58a6ff;
+}
+
+.hero-text .role {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #8b949e;
+  margin-bottom: 1.5rem;
+}
+
+.hero-text .subtitle {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 2.5rem;
+  color: #8b949e;
+  max-width: 500px;
+}
+
+.buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.resume-btn {
+  padding: 0.75rem 2rem;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  background: transparent;
+  color: #C9D1D9;
+  border: 1.5px solid #C9D1D9;
+  display: inline-block;
+}
+
+.resume-btn:hover {
+  background: #58a6ff;
+  color: #fff;
+  border-color: #58a6ff;
+}
+
+.hero-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 100px;
+}
+
+.hero-image img {
+  height: 620px;
+  max-width: 620px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(20, 20, 20, 0.2);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .hero-container {
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: 2rem;
+  }
+  .hero-text .hello { font-size: 1.5rem; }
+  .hero-text .name { font-size: 2.5rem; }
+  .hero-text .role { font-size: 1.5rem; }
+  .hero-image img { max-width: 250px; }
+  .buttons { justify-content: center; }
+}
+
+/* === Keyframes === */
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(40px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeInRight {
+  0% { opacity: 0; transform: translateX(60px); }
+  100% { opacity: 1; transform: translateX(0); }
+}

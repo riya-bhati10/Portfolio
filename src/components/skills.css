@@ -1,0 +1,135 @@
+.skills {
+  padding: 5rem 5rem;
+  background: #0D1117;
+  color: #C9D1D9;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+}
+
+.skills-title {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #58a6ff;
+}
+
+.skills-filters {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.filter-btn {
+  font-size: 0.9rem;
+font-family: "Poppins", sans-serif;
+font-weight: 500;
+  padding: 1rem 1.5rem;
+  border: 1px solid #58a6ff;
+  background: transparent;
+  color: #C9D1D9;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  background: #58a6ff;
+  color: #fff;
+}
+
+.skills-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 2rem; /* 👈 More spacing between cards */
+  margin-top: 1rem;
+  justify-items: center;
+}
+
+.skill-card {
+  background: #161B22;
+  border-radius: 12px;
+  padding-bottom: 0.9rem;
+  padding-top: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+  opacity: 0;
+  transform: translateY(25px);
+
+  width: 160px;   /* 👈 compact size */
+  height: 180px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between; /* 👈 ensures even spacing */
+}
+
+@keyframes floatUpDown {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-6px); }
+  100% { transform: translateY(0); }
+}
+
+/* Apply to cards */
+.skill-card.animate {
+  opacity: 1;
+  transform: translateY(0);
+  animation: fadeInUp 0.7s ease forwards ;
+             /* floatUpDown 3s ease-in-out infinite;  continuous loop */
+}
+
+/* ✨ Hover pulse effect */
+@keyframes hoverPulse {
+  0%   { transform: scale(1.03); }
+  50%  { transform: scale(1.09); }
+  100% { transform: scale(1); }
+}
+
+.skill-card:hover {
+  animation: hoverPulse 0.9s ease-in-out; /* run once per hover */
+}
+/* Circle + Percentage */
+.circle {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  margin: 0 auto;
+}
+
+.progress-ring {
+  transform: rotate(-90deg);
+}
+
+.percentage {
+  position: absolute;
+  top: 60%;
+  left: 60%;
+  transform: translate(-50%, -50%);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #C9D1D9;
+}
+
+/* Skill Logo */
+.skill-logo {
+  width: 28px;   /* 👈 smaller size */
+  height: 28px;
+  margin-top: 0.8rem;
+}
+
+/* Skill Name */
+.skill-name {
+  font-size: 0.9rem;
+  margin-top: 0.4rem;
+  color: #C9D1D9;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(25px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
