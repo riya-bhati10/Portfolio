@@ -86,6 +86,7 @@
 /* GitHub Button */
 .github-btn {
   display: inline-block;
+  margin-right: 2rem;
   padding: 0.6rem 1.2rem;
   background: #238636;
   color: #fff;
