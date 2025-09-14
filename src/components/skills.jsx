@@ -15,7 +15,7 @@ const skillsData = [
   { name: "React.js", category: "Framework / Library", percentage: 85, color: "#61dafb", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
 
   { name: "Git", category: "Tools", percentage: 70, color: "#f1502f", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" },
-  { name: "GitHub", category: "Tools", percentage: 68, color: "#fff", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original-wordmark.svg" },
+  { name: "GitHub", category: "Tools", percentage: 68, color: "#fff", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" },
 
   { name: "Node.js", category: "Runtime / Environment", percentage: 45, color: "#68a063", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
 
@@ -36,7 +36,6 @@ function SkillsSection() {
       setVisibleSkills(skillsData.filter(skill => skill.category === selectedCategory));
     }
   }, [selectedCategory]);
-  
 
   return (
     <section id="skills" className="skills">
@@ -83,8 +82,6 @@ function SkillsSection() {
                     2 * Math.PI * 40 - (skill.percentage / 100) * (2 * Math.PI * 40)
                   }
                 />
-
-  
               </svg>
               <span className="percentage">{skill.percentage}%</span>
             </div>

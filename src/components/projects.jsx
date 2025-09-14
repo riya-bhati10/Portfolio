@@ -8,7 +8,7 @@ const projects = [
       "A responsive Furniture E-Commerce Website built with HTML, CSS, Bootstrap, and JavaScript featuring a modern UI, product catalog, and interactive shopping cart functionality.",
     image: "/furniture-thumbnail.png",
     github: "https://github.com/riya-bhati10/Website",
-    demo:"https://furniture-websie.netlify.app/",
+    // demo:"https://furniture-websie.netlify.app/",
   },
   {
     title: "Mystery Mapper Website",
@@ -16,7 +16,7 @@ const projects = [
       "Mystery Mapper lets you pick any state in India and reveals its haunted spots, ghostly tales, and hidden mysteries. made using React.js and CSS.",
     image: "/mystery-mapper.png",
     github: "https://github.com/riya-bhati10/Mystery-Mapper",
-    demo:"https://mystery-mapper.netlify.app/"
+    // demo:"https://mystery-mapper.netlify.app/"
   },
   // {
   //   title: "E-Commerce Store",
@@ -28,7 +28,7 @@ const projects = [
 ];
 
 const GITHUB_BUTTON_TEXT = "GitHub Repo";
-const DEMO_BUTTON_TEXT = "Live Demo";
+// const DEMO_BUTTON_TEXT = "Live Demo";
 
 function ProjectsSection() {
   const sectionRef = useRef(null);
@@ -78,14 +78,14 @@ function ProjectsSection() {
               >
                 {GITHUB_BUTTON_TEXT}
               </a>
-               <a
+               {/* <a
                 href={project.demo}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="github-btn"
               >
                 {DEMO_BUTTON_TEXT}
-              </a>
+              </a> */}
             </div>
           </div>
         ))}

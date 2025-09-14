@@ -100,3 +100,138 @@
 .github-btn:hover {
   background: #2ea043;
 }
+
+/* Responsive Design */
+
+/* Tablet and Small Desktop */
+@media (max-width: 900px) {
+  .projects {
+    padding: 4rem 1.5rem;
+  }
+  
+  .projects-title {
+    font-size: 2.2rem;
+    margin-bottom: 2.5rem;
+  }
+  
+  .projects-container {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .project-content {
+    padding: 1.25rem;
+  }
+  
+  .project-content h3 {
+    font-size: 1.3rem;
+  }
+}
+
+/* Mobile Landscape */
+@media (max-width: 768px) {
+  .projects {
+    padding: 3rem 1rem;
+  }
+  
+  .projects-title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .projects-container {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .project-img {
+    height: 180px;
+  }
+  
+  .project-content h3 {
+    font-size: 1.2rem;
+  }
+  
+  .project-content p {
+    font-size: 0.9rem;
+  }
+  
+  .github-btn {
+    margin-right: 0;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* Mobile Portrait */
+@media (max-width: 480px) {
+  .projects {
+    padding: 2rem 0.75rem;
+  }
+  
+  .projects-title {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .projects-container {
+    gap: 1.25rem;
+  }
+  
+  .project-img {
+    height: 160px;
+  }
+  
+  .project-content {
+    padding: 1rem;
+  }
+  
+  .project-content h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.6rem;
+  }
+  
+  .project-content p {
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+  }
+  
+  .github-btn {
+    padding: 0.5rem 0.9rem;
+    font-size: 0.85rem;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 360px) {
+  .projects {
+    padding: 1.5rem 0.5rem;
+  }
+  
+  .projects-title {
+    font-size: 1.6rem;
+  }
+  
+  .project-img {
+    height: 140px;
+  }
+  
+  .project-content {
+    padding: 0.75rem;
+  }
+  
+  .project-content h3 {
+    font-size: 1rem;
+  }
+  
+  .project-content p {
+    font-size: 0.8rem;
+  }
+  
+  .github-btn {
+    padding: 0.45rem 0.8rem;
+    font-size: 0.8rem;
+  }
+}

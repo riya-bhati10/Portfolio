@@ -3,6 +3,7 @@ import "./navbar.css";
 
 function Navbar() {
   const [activeLink, setActiveLink] = useState("hero-section");
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   // Scroll to section on click
   const handleClick = (link) => {
@@ -10,6 +11,7 @@ function Navbar() {
     if (section) {
       section.scrollIntoView({ behavior: "smooth" });
     }
+    setIsMenuOpen(false); // Close menu on mobile
   };
 
   // Detect active section on scroll
@@ -38,7 +40,13 @@ function Navbar() {
     <nav className="navbar">
       <div className="nav-container">
         <h2 className="logo">Riya Bhati</h2>
-        <ul className="nav-links">
+        <button 
+          className="mobile-toggle"
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+        >
+          ☰
+        </button>
+        <ul className={`nav-links ${isMenuOpen ? 'open' : ''}`}>
           <li
             className={activeLink === "hero-section" ? "active" : ""}
             onClick={() => handleClick("hero-section")}

@@ -33,3 +33,63 @@
   color: #58a6ff;   /* hover accent */
   transform: scale(1.2);
 }
+
+/* Responsive Design */
+
+/* Tablet and Small Desktop */
+@media (max-width: 768px) {
+  .footer {
+    padding: 1.5rem 0.75rem;
+  }
+  
+  .footer-text {
+    font-size: 0.85rem;
+  }
+  
+  .footer-icons {
+    gap: 1rem;
+  }
+  
+  .footer-icons a {
+    font-size: 1.3rem;
+  }
+}
+
+/* Mobile Portrait */
+@media (max-width: 480px) {
+  .footer {
+    padding: 1.25rem 0.5rem;
+  }
+  
+  .footer-text {
+    font-size: 0.8rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .footer-icons {
+    gap: 0.8rem;
+  }
+  
+  .footer-icons a {
+    font-size: 1.2rem;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 360px) {
+  .footer {
+    padding: 1rem 0.25rem;
+  }
+  
+  .footer-text {
+    font-size: 0.75rem;
+  }
+  
+  .footer-icons {
+    gap: 0.6rem;
+  }
+  
+  .footer-icons a {
+    font-size: 1.1rem;
+  }
+}

@@ -1,7 +1,7 @@
 .skills {
-  padding: 5rem 5rem;
-  background: #0D1117;
-  color: #C9D1D9;
+  padding: 2rem;
+  background: #0d1117;
+  color: #c9d1d9;
   text-align: center;
   font-family: "Poppins", sans-serif;
 }
@@ -22,12 +22,12 @@
 
 .filter-btn {
   font-size: 0.9rem;
-font-family: "Poppins", sans-serif;
-font-weight: 500;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
   padding: 1rem 1.5rem;
   border: 1px solid #58a6ff;
   background: transparent;
-  color: #C9D1D9;
+  color: #c9d1d9;
   border-radius: 6px;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -42,60 +42,54 @@ font-weight: 500;
 .skills-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 2rem; /* 👈 More spacing between cards */
+  gap: 2rem;
   margin-top: 1rem;
   justify-items: center;
 }
 
 .skill-card {
-  background: #161B22;
+  background: #161b22;
   border-radius: 12px;
-  padding-bottom: 0.9rem;
-  padding-top: 1rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding: 1rem;
   transition: transform 0.4s ease, opacity 0.4s ease;
   opacity: 0;
   transform: translateY(25px);
 
-  width: 160px;   /* 👈 compact size */
+  width: 160px;
   height: 180px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between; /* 👈 ensures even spacing */
+  justify-content: flex-start;
+  text-align: center;
 }
 
-@keyframes floatUpDown {
-  0%   { transform: translateY(0); }
-  50%  { transform: translateY(-6px); }
-  100% { transform: translateY(0); }
-}
-
-/* Apply to cards */
 .skill-card.animate {
   opacity: 1;
   transform: translateY(0);
-  animation: fadeInUp 0.7s ease forwards ;
-             /* floatUpDown 3s ease-in-out infinite;  continuous loop */
+  animation: fadeInUp 0.7s ease forwards;
 }
 
-/* ✨ Hover pulse effect */
-@keyframes hoverPulse {
-  0%   { transform: scale(1.03); }
-  50%  { transform: scale(1.09); }
-  100% { transform: scale(1); }
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.skill-card:hover {
-  animation: hoverPulse 0.9s ease-in-out; /* run once per hover */
-}
 /* Circle + Percentage */
 .circle {
-  position: relative;
-  width: 80px;
-  height: 80px;
-  margin: 0 auto;
+  position: relative; /* 👈 important */
+  width: 90px;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.6rem;
 }
 
 .progress-ring {
@@ -104,32 +98,97 @@ font-weight: 500;
 
 .percentage {
   position: absolute;
-  top: 60%;
-  left: 60%;
+  top: 50%;
+  left: 50%;
   transform: translate(-50%, -50%);
   font-size: 0.85rem;
   font-weight: 600;
-  color: #C9D1D9;
+  color: #c9d1d9;
 }
 
 /* Skill Logo */
 .skill-logo {
-  width: 28px;   /* 👈 smaller size */
+  width: 28px;
   height: 28px;
-  margin-top: 0.8rem;
+  margin-top: 0.4rem;
 }
 
 /* Skill Name */
 .skill-name {
   font-size: 0.9rem;
   margin-top: 0.4rem;
-  color: #C9D1D9;
+  color: #c9d1d9;
   font-weight: 500;
   letter-spacing: 0.3px;
 }
 
-/* Animations */
-@keyframes fadeInUp {
-  0% { opacity: 0; transform: translateY(25px); }
-  100% { opacity: 1; transform: translateY(0); }
+/* === Mobile scrollable carousel === */
+@media (max-width: 768px) {
+  .skills {
+    padding-left: 10px;
+  }
+
+  .skills-filters {
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;         /* ❌ wrap hatado */
+  justify-content: flex-start; 
+  gap: 0.8rem;
+  margin-bottom: 2rem;
+  overflow-x: auto;          /* ✅ horizontal scroll */
+  padding: 0.5rem 0.5rem;
+  scroll-snap-type: x mandatory;
+}
+
+.filter-btn {
+  flex: 0 0 auto;            /* ✅ button ka size fixed ho */
+  scroll-snap-align: start;  /* scroll karte time snap hoga */
+  font-size: 0.8rem;
+  padding: 0.6rem 1rem;
+  border: 1px solid #58a6ff;
+  background: transparent;
+  color: #C9D1D9;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.skills-filters::-webkit-scrollbar {
+  display: none;             /* ✅ scrollbar hide */
+}
+.skills-filters {
+  -ms-overflow-style: none; 
+  scrollbar-width: none;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  background: #58a6ff;
+  color: #fff;
+}
+
+  .skills-container {
+    width: 100%;
+    display: flex;
+    overflow-x: auto;
+    gap: 1rem;
+    padding: 0.5rem;
+    scroll-snap-type: x mandatory; /* snap like OTT */
+  }
+
+  .skill-card {
+    flex: 0 0 auto; /* ek fixed width card */
+    width: 130px;
+    height: 160px;
+    scroll-snap-align: center;
+  }
+
+  /* Scrollbar hide (optional) */
+  .skills-container::-webkit-scrollbar {
+    display: none;
+  }
+  .skills-container {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
 }
