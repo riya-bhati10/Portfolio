@@ -2,27 +2,128 @@ import React, { useState, useEffect } from "react";
 import "./skills.css";
 
 const skillsData = [
-  { name: "Java", category: "Languages", percentage: 70, color: "#f89820", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" },
-  { name: "SQL", category: "Languages", percentage: 65, color: "#00618a", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" },
-  { name: "JavaScript", category: "Languages", percentage: 80, color: "#f7df1e", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" },
-  { name: "HTML5", category: "Languages", percentage: 90, color: "#e34f26", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" },
-  { name: "CSS3", category: "Languages", percentage: 81, color: "#1572b6", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" },
+  {
+    name: "Java",
+    category: "Languages",
+    percentage: 70,
+    color: "#f89820",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg",
+  },
+  {
+    name: "SQL",
+    category: "Languages",
+    percentage: 65,
+    color: "#00618a",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
+  },
+  {
+    name: "JavaScript",
+    category: "Languages",
+    percentage: 80,
+    color: "#f7df1e",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
+  },
+  {
+    name: "HTML5",
+    category: "Languages",
+    percentage: 90,
+    color: "#e34f26",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
+  },
+  {
+    name: "CSS3",
+    category: "Languages",
+    percentage: 81,
+    color: "#1572b6",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
+  },
 
-  { name: "OOPs", category: "Concepts", percentage: 75, color: "#4caf50", logo: "https://cdn-icons-png.flaticon.com/512/906/906324.png" },
-  { name: "DBMS", category: "Concepts", percentage: 77, color: "#ff9800", logo: "https://cdn-icons-png.flaticon.com/512/2772/2772128.png" },
+  {
+    name: "OOPs",
+    category: "Concepts",
+    percentage: 75,
+    color: "#4caf50",
+    logo: "https://cdn-icons-png.flaticon.com/512/906/906324.png",
+  },
+  {
+    name: "DBMS",
+    category: "Concepts",
+    percentage: 77,
+    color: "#ff9800",
+    logo: "https://cdn-icons-png.flaticon.com/512/2772/2772128.png",
+  },
 
-  { name: "Bootstrap", category: "Framework / Library", percentage: 76, color: "#7952b3", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" },
-  { name: "React.js", category: "Framework / Library", percentage: 85, color: "#61dafb", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
+  {
+    name: "Bootstrap",
+    category: "Framework / Library",
+    percentage: 76,
+    color: "#7952b3",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg",
+  },
+  {
+    name: "React.js",
+    category: "Framework / Library",
+    percentage: 85,
+    color: "#61dafb",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+  },
 
-  { name: "Git", category: "Tools", percentage: 70, color: "#f1502f", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" },
-  { name: "GitHub", category: "Tools", percentage: 68, color: "#fff", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" },
+  {
+    name: "Git",
+    category: "Tools",
+    percentage: 70,
+    color: "#f1502f",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
+  },
+  {
+    name: "GitHub",
+    category: "Tools",
+    percentage: 68,
+    color: "#fff",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg",
+  },
 
-  { name: "Node.js", category: "Runtime / Environment", percentage: 45, color: "#68a063", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
+  {
+    name: "Node.js",
+    category: "Runtime / Environment",
+    percentage: 65,
+    color: "#68a063",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
+  },
+  {
+    name: "Express.js",
+    category: "Framework / Library",
+    percentage: 60,
+    color: "#ffffff",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg",
+  },
 
-  { name: "MySQL", category: "Database", percentage: 65, color: "#00758f", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" },
+  {
+    name: "MongoDB",
+    category: "Database",
+    percentage: 55,
+    color: "#47a248",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
+  },
+
+  {
+    name: "MySQL",
+    category: "Database",
+    percentage: 65,
+    color: "#00758f",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg",
+  },
 ];
 
-const categories = ["All", "Languages", "Concepts", "Framework / Library", "Tools", "Runtime / Environment", "Database"];
+const categories = [
+  "All",
+  "Languages",
+  "Concepts",
+  "Framework / Library",
+  "Tools",
+  "Runtime / Environment",
+  "Database",
+];
 const SKILLS_TITLE = "Technical Skills";
 
 function SkillsSection() {
@@ -33,7 +134,9 @@ function SkillsSection() {
     if (selectedCategory === "All") {
       setVisibleSkills(skillsData);
     } else {
-      setVisibleSkills(skillsData.filter(skill => skill.category === selectedCategory));
+      setVisibleSkills(
+        skillsData.filter((skill) => skill.category === selectedCategory),
+      );
     }
   }, [selectedCategory]);
 
@@ -79,7 +182,8 @@ function SkillsSection() {
                   cy="45"
                   strokeDasharray={2 * Math.PI * 40}
                   strokeDashoffset={
-                    2 * Math.PI * 40 - (skill.percentage / 100) * (2 * Math.PI * 40)
+                    2 * Math.PI * 40 -
+                    (skill.percentage / 100) * (2 * Math.PI * 40)
                   }
                 />
               </svg>

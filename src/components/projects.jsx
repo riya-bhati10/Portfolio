@@ -2,6 +2,15 @@ import React, { useEffect, useRef } from "react";
 import "./projects.css";
 
 const projects = [
+
+  {
+  title: "FixHub – Gadget Repair Service Platform",
+  description:
+    "A full-stack MERN web application for managing gadget repair services, allowing users to book repairs and track service requests through a clean and responsive interface.",
+  image: "/fixhub-thumbnail.png",
+  github: "https://github.com/riya-bhati10/FixHub",
+},
+
   {
     title: "Furniture Store Website",
     description:

@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import "./hero-section.css";
-import profileImg from "/bg.png"; 
+import profileImg from "/bg.png";
 
 function HeroSection() {
   useEffect(() => {
@@ -15,11 +15,11 @@ function HeroSection() {
           }
         });
       },
-      { threshold: 0.2 }
+      { threshold: 0.2 },
     );
 
     const elements = document.querySelectorAll(
-      ".hero-text .hello, .hero-text .name, .hero-text .role, .hero-text .subtitle, .buttons, .hero-image img"
+      ".hero-text .hello, .hero-text .name, .hero-text .role, .hero-text .subtitle, .buttons, .hero-image img",
     );
     elements.forEach((el) => observer.observe(el));
 
@@ -34,14 +34,15 @@ function HeroSection() {
           <h1 className="name">
             I'm <span>Riya Bhati</span>
           </h1>
-          <h2 className="role">Frontend Developer</h2>
+          <h2 className="role">MERN Stack Developer</h2>
           <p className="subtitle">
-            Frontend enthusiast turning ideas into interactive web experiences,
-            while exploring backend development to become a versatile full-stack developer.
+            MERN stack developer with a strong passion for frontend development,
+            crafting intuitive user interfaces while building scalable backend
+            solutions with Node.js and MongoDB.
           </p>
 
           <div className="buttons">
-            <a href="/Riya's Resume.pdf" download className="btn resume-btn">
+            <a href="/Riya_Bhati_Resume.pdf" download className="btn resume-btn">
               Download Resume
             </a>
           </div>

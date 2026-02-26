@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import "./about.css";
 
 function AboutSection() {
-
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -14,12 +13,12 @@ function AboutSection() {
           }
         });
       },
-      { threshold: 0.2 } // trigger when 20% visible
+      { threshold: 0.2 }, // trigger when 20% visible
     );
 
-    document.querySelectorAll(".about-header, .about-left, .card").forEach((el) =>
-      observer.observe(el)
-    );
+    document
+      .querySelectorAll(".about-header, .about-left, .card")
+      .forEach((el) => observer.observe(el));
 
     return () => observer.disconnect();
   }, []);
@@ -40,18 +39,20 @@ function AboutSection() {
             <div className="bio-section">
               <h3 className="bio-title">ABOUT ME</h3>
               <p className="bio-text">
-                I’m a final-year BCA student with a strong foundation in Core
-                Java and frontend development. Over the past year, I have built
-                several frontend projects, which helped me strengthen my skills
-                in HTML, CSS, JavaScript, React, and modern UI design.
-                Currently, I am expanding my knowledge into backend technologies
-                as I work towards becoming a proficient MERN stack developer. I
-                enjoy solving problems and translating ideas into clean,
-                responsive, and user-friendly web applications. My goal is to
-                continuously learn, improve, and contribute to impactful
-                projects that make a difference. I believe in consistent growth,
-                adaptability, and teamwork, and I’m excited to start my career
-                as a frontend/full-stack developer.
+                I’m a final-year BCA student who enjoys building real-world web
+                applications using the MERN stack. My primary strength lies in
+                frontend development, where I focus on creating clean,
+                responsive, and engaging user interfaces using React,
+                JavaScript, HTML, and CSS. Over time, I’ve also worked on
+                backend development with Node.js, Express.js, and MongoDB, which
+                helped me understand how data flows, APIs are designed, and
+                complete applications are structured. I like thinking beyond
+                just the UI and enjoy connecting frontend logic with backend
+                functionality. I’m someone who learns by building, improving,
+                and refining projects. I value clarity in code, attention to
+                user experience, and teamwork. As I move forward, my goal is to
+                grow into a well-rounded MERN stack developer and contribute to
+                products that are practical, scalable, and meaningful.
               </p>
             </div>
           </div>
@@ -70,9 +71,9 @@ function AboutSection() {
               <h3>🎯 Goal</h3>
               <p>
                 Build innovative and practical projects that solve real-world
-                problems. 
-                <br /> Aspire to become a skilled and
-                passionate MERN stack developer.
+                problems.
+                <br /> To grow as a frontend-focused MERN stack developer by
+                continuously learning and building meaningful projects.
               </p>
             </div>
           </div>
